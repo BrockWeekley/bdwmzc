@@ -1,0 +1,26 @@
+[
+    {
+        "user_id": 1,
+        "commits": 0,
+        "issues": 2,
+        "commit_comments": 0,
+        "issue_comments": 0,
+        "pull_requests": 0,
+        "pull_request_comments": 0,
+        "total": 2,
+        "repo_name": "rails",
+        "repo_id": 21000
+    },
+    {
+        "user_id": 2,
+        "commits": 0,
+        "issues": 2,
+        "commit_comments": 0,
+        "issue_comments": 0,
+        "pull_requests": 0,
+        "pull_request_comments": 0,
+        "total": 2,
+        "repo_name": "rails",
+        "repo_id": 21000
+    }
+]
