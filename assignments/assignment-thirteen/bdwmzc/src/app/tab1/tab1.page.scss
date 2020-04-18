@@ -1,0 +1,49 @@
+ion-card-title {
+  padding: 1vh 1vw 1vh 1vw;
+}
+
+.img {
+  margin-top: 1vh;
+  margin-right: 4vw;
+  margin-left: 4vw;
+  max-height: 250px;
+  max-width: 250px;
+  float: right;
+  border-radius: 100%;
+}
+
+ion-img {
+  position: relative;
+  bottom: 15%;
+}
+
+ion-content {
+  --ion-background-color: #94a8a8;
+}
+
+ion-card {
+  padding: 1vh 1vw 1vh 1vw;
+  background-color: white;
+}
+
+hr {
+  border: solid grey .5px;
+}
+
+ion-icon {
+  cursor: pointer;
+}
+
+li {
+  margin-bottom: 1vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.profile {
+  float: right;
+  width: 2vw;
+  height: 2vw;
+}
