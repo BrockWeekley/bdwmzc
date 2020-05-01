@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="!user"><ion-icon name="undo" class="back" routerLink="/tabs/tab1"></ion-icon> Welcome Guest</ion-title>
+    <ion-title *ngIf="user && user.displayName === null"><ion-icon name="undo" class="back" routerLink="/tabs/tab1"></ion-icon> Welcome Anonymous User {{ user.uid }}</ion-title>
+    <ion-title *ngIf="user && user.displayName !== null"><ion-icon name="undo" class="back" routerLink="/tabs/tab1"></ion-icon> Welcome Google User {{ user.displayName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="login">
+    <ion-button *ngIf="!user" color="secondary" class="btn" (click)="anon()">
+      <ion-icon class="buttonIcon" name="person"></ion-icon> Login Anonymously
+    </ion-button>
+    <ion-button *ngIf="!user" color="secondary" class="btn" (click)="google()">
+      <ion-icon class="buttonIcon" name="cloud"></ion-icon> Login With Google
+    </ion-button>
+    <div *ngIf="user" class="btn logged">You have been logged in.</div>
+    <ion-button color="secondary" class="btn" routerLink="/tabs/tab1">Home</ion-button>
+    <ion-button *ngIf="user" color="secondary" class="btn" (click)="logout()">Logout</ion-button>
+  </ion-card>
+</ion-content>
