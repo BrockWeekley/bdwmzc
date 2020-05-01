@@ -8,7 +8,7 @@ I had some issues getting this to work at the start, because it requires a lot o
 
 The Firebase docs on authentication are a good place to start when looking for cloud SSO: https://firebase.google.com/docs/auth and I also found a website specifically detailing SSO through Firebase: https://howtofirebase.com/firebase-authentication-for-web-d58aad62cf6d?gi=bb2523668b16
 
-I find SSO to be a powerful tool that apps should all look to be including. Firebase is a strong contendor with the abilities that they have to integrate into web and native apps. 
+I find SSO to be a powerful tool that apps should all look to be including. Firebase is a strong contendor with the abilities that they have to integrate into web and native apps. Here's an article that I read when considering some SSO tools that made me choose Firebase: https://www.ukad-group.com/blog/should-i-use-firebase/
 
 I currently have anonymous login and Google login available on my site, but I would like to add many more SSO providers such as Facebook and even my own database login. Then I would hope to lock down the rest of my app to only be available to logged in users.
 
