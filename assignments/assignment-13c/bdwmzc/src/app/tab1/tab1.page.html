@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home <ion-icon class="profile" name="contact" routerLink="/login"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-title>
+      <strong>Brock D. Weekley</strong>
+      <hr />
+    </ion-card-title>
+    <div class="img"></div>
+    <ion-card-content>
+      <h1>Experience:</h1>
+      <ul>
+        <li>SS&C Cloud Platform Technical Developer &nbsp; <ion-icon *ngIf="!ssc" name="arrow-dropdown" (click)="ssc = !ssc"></ion-icon><ion-icon *ngIf="ssc" name="arrow-dropup" (click)="ssc = !ssc"></ion-icon></li>
+        <ion-card *ngIf="ssc">&nbsp; I began a summer internship at SS&C Technologies in 2019 where my responsibilities included developing Angular applications, writing Java springboot endpoints, manipulating JPA Datatypes, and configuring security for multiple applications. Following this internship, I was offered a part time position where I continued to work building our Alerting application from remote while attending school at the Univeristy of Missouri. I am still in employment here.</ion-card>
+        <li>Microsoft Certified C# Developer &nbsp; <ion-icon *ngIf="!micro" name="arrow-dropdown" (click)="micro = !micro"></ion-icon><ion-icon *ngIf="micro" name="arrow-dropup" (click)="micro = !micro"></ion-icon></li>
+        <ion-card *ngIf="micro">&nbsp; In 2015, my focus language was C# and game development through Visual Studio. I attended the Fort Osage Career and Technology Center, where I took a course devoted to teaching C# fundamentals and Microsoft techniques. Following this course, we were given a certification test which I passed and have maintained my knowledge of in order to consider myself a certified Microsoft C# Developer.</ion-card>
+        <li>National Technical Honor Society &nbsp; <ion-icon *ngIf="!nths" name="arrow-dropdown" (click)="nths = !nths"></ion-icon><ion-icon *ngIf="nths" name="arrow-dropup" (click)="nths = !nths"></ion-icon></li>
+        <ion-card *ngIf="nths">&nbsp; As part of the Career and Technology Center course that I took, by receiving an A in the course and having a high GPA, I was invited to join the National Technical Honor Society. This is an honor society recognizing achievement in STEM fields and technical skills. I have maintained my membership with this organization and become part of the NTHS network of career professionals. </ion-card>
+        <li>Honors College at Mizzou &nbsp; <ion-icon *ngIf="!honors" name="arrow-dropdown" (click)="honors = !honors"></ion-icon><ion-icon *ngIf="honors" name="arrow-dropup" (click)="honors = !honors"></ion-icon></li>
+        <ion-card *ngIf="honors">&nbsp; Upon choosing to attend the University of Missouri, I was accepted into the Honors College of Mizzou, where I have since taken many classes with honors both in my field and not in order to develop my other attributes. For example, in taking an honors french course, I was able to learn French at a conversational level and helped the department with many different activities including a website for quizzing students.</ion-card>
+      </ul>
+    </ion-card-content>
+    <ion-card-content>
+      <h1>Skills:</h1>
+      <h3>Web Development with:</h3>
+      <ul>
+        <li>The <a href="https://ionicframework.com/">Ionic</a> framework, which this application is developed in.</li>
+        <li>Angular and Node</li>
+        <li>PHP and Apache</li>
+        <li>Javascript and jQuery</li>
+        <li>Google API's and Google's <a href="https://firebase.google.com/">FireBase</a></li>
+        <li><a href="https://scrapy.org/">Python Scrapy</a></li>
+        <li>Full stack applications with <a href="https://expressjs.com/">Express</a>, NodeJS, and <a href="https://www.mongodb.com/">MongoDB</a></li>
+      </ul>
+      <h3>Application Development with:</h3>
+      <ul>
+        <li>C, mainly algorithm complexity and design (Big O)</li>
+        <li>C++, Raspberry Pi development</li>
+        <li>C#, game design and fundamentals</li>
+        <li>Java, main language, furthering object oriented concepts and developing backend for web apps</li>
+        <li>Python, robotics development (<a href="https://www.softbankrobotics.com/emea/en/nao">NAO Robots</a>)</li>
+        <li>Database relation languages such as mySQL</li>
+      </ul>
+    </ion-card-content>
+    <ion-card-content>
+      <h1>Education:</h1>
+      <ion-card>
+        <strong>
+        Grain Valley High School<br />
+        Grain Valley, MO, 64029<br />
+        Cumulative GPA: 4.012<br />
+        Graduation: May 2017
+        </strong>
+      </ion-card>
+      <ion-card>
+        <strong>
+          University of Missouri- Columbia<br />
+          Columbia, MO, 65201<br />
+          Current GPA: 3.54<br />
+          Expected Graduation: May 2021
+        </strong>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
