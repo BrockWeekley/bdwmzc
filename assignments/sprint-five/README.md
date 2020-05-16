@@ -1,6 +1,6 @@
 # Getting Started
 
-## A running instance of this project can be found at https://www.bdwmzc.com. Simply navigate to the profile icon in the top right of the homepage to see the login page and anonymous login.
+## A running instance of this project can be found at https://www.bdwmzc.com. Simply navigate to the profile icon in the top right of the homepage to see the login page and integration with Google SSO.
 
 ### To run this project locally, the following must be installed:
 
