@@ -1,6 +1,6 @@
 # Getting Started
 
-## A running instance of this project can be found at https://www.bdwmzc.com. Simply navigate to the profile icon in the top right of the homepage to see the login page and anonymous login.
+## A running instance of this project can be found at https://www.bdwmzc.com, however, this project is being continuously updated and may be more up to date than the version posted here. Simply navigate to the profile icon in the top right of the homepage to see the login page and anonymous login.
 
 ### To run this project locally, the following must be installed:
 
