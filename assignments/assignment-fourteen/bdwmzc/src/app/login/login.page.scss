@@ -1,0 +1,50 @@
+.back {
+  cursor: pointer;
+  margin-right: 2%;
+}
+
+.buttonIcon {
+  margin-right: 4%;
+}
+
+.btn {
+  height: 5vw;
+  width: 50%;
+  margin-left: 25%;
+  font-size: 1.5vw;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 5%;
+}
+
+.logged {
+  color: whitesmoke;
+  text-align: center;
+}
+
+::ng-deep .picker-wrapper {
+  margin-bottom: 25% !important;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: limegreen;
+}
+
+.logged {
+  padding-top: 2px;
+  color: white;
+}
+
+.home {
+  margin-bottom: 1%;
+  min-height: 150px;
+}
+

@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="!user"><ion-icon name="undo" class="back" routerLink="/tabs/tab1"></ion-icon> Welcome Guest</ion-title>
+    <ion-title *ngIf="user"><ion-icon name="undo" class="back" routerLink="/tabs/tab1"></ion-icon> Welcome User {{ username }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="login" *ngIf="!emailSignUp && !emailLogin && !googleLogin">
+    <ion-item class="home" *ngIf="!user" color="primary">
+      <ion-button expand="full" color="secondary" class="btn" (click)="emailLogin = true">
+        <ion-icon class="buttonIcon" name="mail"></ion-icon> Login with Email
+      </ion-button>
+    </ion-item>
+
+    <ion-item class="home" *ngIf="!user">
+      <ion-button color="secondary" class="btn" (click)="emailSignUp = true">
+        <ion-icon class="buttonIcon" name="send"></ion-icon> Sign Up with Email
+      </ion-button>
+    </ion-item>
+
+    <ion-item class="home" *ngIf="!user" color="primary">
+      <ion-button color="secondary" class="btn" (click)="google()">
+        <ion-icon class="buttonIcon" name="cloud"></ion-icon> Login With Google
+      </ion-button>
+    </ion-item>
+
+    <ion-item class="home" *ngIf="user" color="primary">
+      <div class="btn logged">You have been logged in.</div>
+    </ion-item>
+
+    <ion-item class="home">
+    <ion-button color="secondary" class="btn" routerLink="/tabs/tab1">Home</ion-button>
+    </ion-item>
+
+    <ion-item class="home" *ngIf="user" color="primary">
+    <ion-button color="secondary" class="btn" (click)="logout()">Logout</ion-button>
+    </ion-item>
+
+    <ion-item class="home" *ngIf="!user" color="primary">
+      <div class="logged btn">You must have an account to access all pages of the aplication.</div>
+    </ion-item>
+  </div>
+
+  <ion-card class="login" *ngIf="emailSignUp">
+    <form [formGroup]="emailForm" (ngSubmit)="createEmail()">
+      <ion-item lines="full">
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+        <span class="error" *ngIf="emailForm.controls['name'].errors && emailForm.controls['name'].dirty">Please enter a valid name greater than 2 characters.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+        <span class="error" *ngIf="emailForm.controls['email'].errors && emailForm.controls['email'].dirty">Please enter a valid email.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+        <span class="error" *ngIf="emailForm.controls['password'].errors && emailForm.controls['password'].dirty">Password must contain at least one uppercase letter, one lowercase letter,
+          at least one number or special character, and be longer than eight charaters.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" required [(ngModel)]="confirmPass" (ngModelChange)="checkPass()" [ngModelOptions]="{standalone: true}"></ion-input>
+        <span class="error" *ngIf="!match && emailForm.controls['password'].dirty">Passwords do not match.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Date of Birth</ion-label>
+        <ion-datetime (ionChange)="getDate($event)" formControlName="dob" required [value]="currentDate"></ion-datetime>
+        <span class="error" *ngIf="emailForm.controls['dob'].errors && emailForm.controls['dob'].dirty">Please select a date of birth.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Organization</ion-label>
+        <ion-input formControlName="org" type="text" required></ion-input>
+        <span class="error" *ngIf="emailForm.controls['org'].errors && emailForm.controls['org'].dirty">Please provide an organization name greater than 2 characters.</span>
+      </ion-item>
+      <ion-item>
+        <div [class]="messageType">{{ message }}</div>
+      </ion-item>
+      <ion-button [disabled]="!emailForm.valid || !match" type="submit" fill="solid" expand="block" color="secondary">Sign Up</ion-button>
+      <ion-button fill="solid" expand="block" color="secondary" (click)="reset()">Cancel</ion-button>
+    </form>
+  </ion-card>
+
+  <ion-card class="login" *ngIf="emailLogin">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+        <span class="error" *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].dirty">Please enter a valid email.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+        <span class="error" *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].dirty">Please enter a password.</span>
+      </ion-item>
+
+      <ion-item>
+        <div [class]="messageType">{{ message }}</div>
+      </ion-item>
+      <ion-button [disabled]="!loginForm.valid" type="submit" fill="solid" expand="block" color="secondary">Log In</ion-button>
+      <ion-button fill="solid" expand="block" color="secondary" (click)="reset()">Cancel</ion-button>
+    </form>
+  </ion-card>
+
+  <ion-card class="login" *ngIf="googleLogin">
+    <form [formGroup]="googleForm" (ngSubmit)="googleCreate()" *ngIf="!addSuccess">
+      <ion-item>
+        <ion-label>Please provide some additional information about yourself:</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Date of Birth</ion-label>
+        <ion-datetime (ionChange)="getDate($event)" formControlName="dob" required [value]="currentDate"></ion-datetime>
+        <span class="error" *ngIf="googleForm.controls['dob'].errors && googleForm.controls['dob'].dirty">Please select a date of birth.</span>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Organization</ion-label>
+        <ion-input formControlName="org" type="text" required></ion-input>
+        <span class="error" *ngIf="googleForm.controls['org'].errors && googleForm.controls['org'].dirty">Please provide an organization name greater than 2 characters.</span>
+      </ion-item>
+
+      <ion-item>
+        <div [class]="messageType">{{ message }}</div>
+      </ion-item>
+      <ion-button [disabled]="!googleForm.valid" type="submit" fill="solid" expand="block" color="secondary">Submit</ion-button>
+    </form>
+    <ion-item *ngIf="addSuccess">
+      <ion-label class="success">Thank you!</ion-label>
+      <ion-button fill="solid" expand="block" color="secondary" (click)="reset()">Back</ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

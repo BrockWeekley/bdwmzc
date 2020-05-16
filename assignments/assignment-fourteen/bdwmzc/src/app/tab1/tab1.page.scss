@@ -1,0 +1,45 @@
+ion-card-title {
+  padding: 1vh 1vw 1vh 1vw;
+}
+
+.img {
+  background: url("https://www.bdwmzc.com/me/Me.jpg") no-repeat center 40%;
+  background-size: 18vw;
+  width: 25vw;
+  height: 25vw;
+  max-height: 300px;
+  max-width: 300px;
+  float: right;
+  box-shadow: 1px 1px inset darkgray, 2px 2px darkslategray;
+}
+
+ion-content {
+  --ion-background-color: #94a8a8;
+}
+
+ion-card {
+  padding: 1vh 1vw 1vh 1vw;
+  background-color: white;
+}
+
+hr {
+  border: solid grey .5px;
+}
+
+ion-icon {
+  cursor: pointer;
+}
+
+li {
+  margin-bottom: 1vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.profile {
+  float: right;
+  width: 2em;
+  height: 2em;
+}

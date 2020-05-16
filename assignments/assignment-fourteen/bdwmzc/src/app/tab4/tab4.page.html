@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Analytics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header class="pie">
+      Organizations of Visting Users
+    </ion-card-header>
+  </ion-card>
+  <div class="chart">
+    <ngx-charts-pie-chart *ngIf="ready"
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [legendPosition]="legendPosition"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-pie-chart>
+  </div>
+  <ion-card class="spacer">
+    <ion-card-header class="pie">
+      Average Age of Visting Users
+    </ion-card-header>
+  </ion-card>
+  <div class="chart">
+    <ngx-charts-bar-vertical *ngIf="ready"
+            [scheme]="colorScheme"
+            [results]="data2"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </div>
+</ion-content>
