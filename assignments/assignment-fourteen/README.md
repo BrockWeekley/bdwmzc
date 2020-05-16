@@ -24,20 +24,28 @@ https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/w
 
 https://developers.google.com/analytics/devguides/reporting/embed/v1/getting-started
 
-https://github.com/swimlane/ngx-charts
+https://firebase.google.com/products/analytics
 
 https://firebase.google.com/
 
+https://firebase.google.com/docs/firestore/query-data/queries
+
 https://github.com/angular/angularfire/blob/master/docs/auth/router-guards.md
+
+https://github.com/swimlane/ngx-charts
 
 https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical
 
 https://swimlane.gitbook.io/ngx-charts/
 
+https://medium.com/codingthesmartway-com-blog/angular-chart-js-with-ng2-charts-e21c8262777f
+
 https://github.com/swimlane/ngx-charts/issues/1344
 
 https://ionicframework.com/
 
-https://www.w3resource.com/javascript-exercises/javascript-date-exercise-49.php
+https://forum.ionicframework.com/t/styling-ion-datetime-picker/92695
 
 https://ionicframework.com/docs/v3/ionicons/
+
+https://www.w3resource.com/javascript-exercises/javascript-date-exercise-49.php
