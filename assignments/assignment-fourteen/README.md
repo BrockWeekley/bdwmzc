@@ -1,6 +1,10 @@
 # Getting Started
 
-## A running instance of this project can be found at https://www.bdwmzc.com. Simply navigate to the profile icon in the top right of the homepage to see the login page and anonymous login.
+## A running instance of this project can be found at https://www.bdwmzc.com.
+## The application begins with a view of my professional portfolio.
+## Users have the ability to login with both a custom email password account as well as Google SSO.
+## Some preliminary data will be collected at sign up time.
+## Data is aggregated and displayed in different ways on the Analytics page using ngx charts.
 
 ### To run this project locally, the following must be installed:
 
